@@ -7,9 +7,49 @@
     <script>
       window.INSTANCE_VARS = <%- JSON.stringify(instanceConfig.site) %>
     </script>
+    <style>
+* {
+  --top-strip-height: 3rem;
+}
+
+.top-strip {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .top-strip {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: var(--top-strip-height);
+    width: 100vw;
+    background: #80a3d5;
+    color: #fff;
+    padding: .4rem;
+  }
+
+  .top-strip a {
+    text-decoration: underline !important;
+  }
+
+  .app-container {
+    position: relative;
+    margin-top: var(--top-strip-height);
+    height: calc(100vh - var(--top-strip-height)) !important;
+  }
+}
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="top-strip">
+      <div>Username and password: <b>aeria</b> -- database is reset every 30 minutes (<a href="https://github.com/aeria-org/demo">view on Github</a>)</div>
+    </div>
+    <div class="app-container">
+      <div id="app"></div>
+    </div>
     <script type="module" src="/src/index.ts"></script>
   </body>
 </html>

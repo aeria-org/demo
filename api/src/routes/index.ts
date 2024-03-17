@@ -12,7 +12,7 @@ router.group('/pizza', pizzaRoutes)
 router.GET('/reset', async (context) => {
   if( context.request.headers['x-api-secret'] !== process.env.API_SECRET ) {
     return {
-      success: false
+      success: false,
     }
   }
 
@@ -22,13 +22,13 @@ router.GET('/reset', async (context) => {
       created_at: {
         $lte: collection === 'log'
           ? new Date(Date.now() - 3600000 * 24 * 10)
-          : new Date(Date.now() - 1800000)
-      }
+          : new Date(Date.now() - 1800000),
+      },
     })
   }
 
   return {
-    success: true
+    success: true,
   }
 })
 

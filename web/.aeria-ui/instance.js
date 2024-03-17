@@ -4,7 +4,7 @@ import vueRouter from 'unplugin-vue-router/vite'
 /** @type {import('aeria-ui-build').InstanceConfig} */
 export default {
   site: {
-    title: 'Quickstart',
+    title: 'Aeria Demo',
     signinText: 'Admin panel',
     signupForm: true,
   },
