@@ -1,0 +1,32 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "aeria-ui -m serve",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "build:ci": "vue-tsc --noEmit && aeria-ui -m build",
+    "build": "vue-tsc --noEmit && aeria-ui -m build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aeria-ui/i18n-en": "latest",
+    "aeria-app-layout": "latest",
+    "aeria-ui": "latest"
+  },
+  "devDependencies": {
+    "aeria-ui-build": "latest",
+    "autoprefixer": "^10.4.16",
+    "eslint-config-aeriaui": "latest",
+    "eslint-plugin-readable-tailwind": "^1.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "unplugin-vue-router": "^0.8.4",
+    "vue-tsc": "^1.8.27"
+  }
+}

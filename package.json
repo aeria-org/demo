@@ -1,0 +1,26 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "husky && node scripts/postinstall.js && cp package-lock.json api && cp package-lock.json web",
+    "dev": "dualist api web"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "api/",
+    "web/"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "dualist": "latest",
+    "eslint-config-aeria": "latest",
+    "typescript": "^5.4.0-beta"
+  },
+  "dependencies": {
+    "husky": "^9.0.10"
+  }
+}
