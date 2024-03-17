@@ -7,7 +7,7 @@ declare global {
       | 'GODMODE_USERNAME'
       | 'GODMODE_PASSWORD'
       | 'STORAGE_PATH'
-      | 'STORAGE_TEMP_PATH',
+      | 'STORAGE_TEMP_PATH'
       | 'RESET_SECRET',
       string
     > {}
