@@ -17,7 +17,7 @@ services:
       - mongo
     volumes:
       - api-build:/opt/application/api-build
-      - api-storage:/data/storage
+      - /data/demo-storage:/data/storage
     env_file: api/production.env
     healthcheck:
       test: curl -s -w '%{http_code}' http://localhost:3000/api/describe
@@ -57,5 +57,4 @@ services:
 volumes:
   api-build:
   web-build:
-  api-storage:
 
