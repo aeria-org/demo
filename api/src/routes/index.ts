@@ -9,8 +9,8 @@ router.group('/pizza', pizzaRoutes)
  * Resets documents from the database each half an hour.
  * Log collection is reseted every 10 days.
  */
-router.GET('/reset', (context) => {
-  if( context.request.headers['x-api-secret'] !== process.env.RESET_SECRET ) {
+router.GET('/reset', async (context) => {
+  if( context.request.headers['x-api-secret'] !== process.env.API_SECRET ) {
     return {
       success: false
     }
@@ -18,7 +18,7 @@ router.GET('/reset', (context) => {
 
   for( const collection in collections ) {
     const dbCollection = getDatabaseCollection(collection)
-    dbCollection.deleteMany({
+    await dbCollection.deleteMany({
       created_at: {
         $lte: collection === 'log'
           ? new Date(Date.now() - 3600000 * 24 * 10)
