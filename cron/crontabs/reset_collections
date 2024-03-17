@@ -1,4 +1,4 @@
 # Fetch sales every five hours and 45 minutes, everyday
 # min   hour    day   month   weekday   command
-0,30    *       *     *       *         wget -qO - --header "x-api-secret: ${API_SECRET}" http://api:3000/api/reset
+*/10    *       *     *       *         wget -qO - --header "x-api-secret: ${API_SECRET}" http://api:3000/api/reset
 
