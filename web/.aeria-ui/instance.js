@@ -6,7 +6,6 @@ export default {
   site: {
     title: 'Aeria Demo',
     signinText: 'Admin panel',
-    signupForm: true,
   },
   icons: {
     libraries: [
